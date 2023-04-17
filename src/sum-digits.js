@@ -10,7 +10,7 @@ function getSumOfDigits(n) {
     digits = digits.reduce((sum, digit) => sum + parseInt(digit), 0).toString().split('');
   }
 
-  // Возвращаем однозначное число
+  // Возвращаем однозначное числoo
   return parseInt(digits[0]);
 }
 
