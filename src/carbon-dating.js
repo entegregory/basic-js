@@ -3,20 +3,6 @@ const { NotImplementedError } = require('../extensions/index.js');
 const MODERN_ACTIVITY = 15;
 const HALF_LIFE_PERIOD = 5730;
 
-/**
- * Определение возраста археологической находки, используя
- * значения MODERN_ACTIVITY и HALF_LIFE_PERIOD
- * 
- * @param {String} sampleActivity строковое представление текущей активности 
- * @return {Number | Boolean} рассчитанный возраст в годах или false
- * в случае некорректного sampleActivity
- *
- * @example
- * 
- * dateSample('1') => 22387
- * dateSample('WOOT!') => false
- *
- */
 function dateSample(sampleActivity) {
   // Проверяем, является ли sampleActivity строкой и является ли значение активности положительным числом меньше 15
   if (typeof sampleActivity !== 'string' || isNaN(parseFloat(sampleActivity)) || parseFloat(sampleActivity) <= 0 || parseFloat(sampleActivity) > MODERN_ACTIVITY) {

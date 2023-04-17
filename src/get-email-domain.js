@@ -1,15 +1,6 @@
 // Импорт ошибки "NotImplementedError" из файла '../extensions/index.js'
 const { NotImplementedError } = require('../extensions/index.js');
 
-/**
- * Дан email-адрес, вернуть его домен.
- *
- * @param {String} email
- * @return {String}
- *
- * @example
- * Для входных данных 'prettyandsimple@example.com' вывод должен быть 'example.com'
- */
 function getEmailDomain(email) {
   // Проверка на валидность входных данных, если email не является строкой, выбросить ошибку
   if (typeof email !== 'string') {
