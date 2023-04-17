@@ -4,7 +4,7 @@ const MODERN_ACTIVITY = 15;
 const HALF_LIFE_PERIOD = 5730;
 
 /**
- * Определить возраст археологической находки, используя
+ * Определение возраста археологической находки, используя
  * значения MODERN_ACTIVITY и HALF_LIFE_PERIOD
  * 
  * @param {String} sampleActivity строковое представление текущей активности 
