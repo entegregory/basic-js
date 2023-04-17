@@ -1,20 +1,34 @@
+// Импорт ошибки "NotImplementedError" из файла '../extensions/index.js'
 const { NotImplementedError } = require('../extensions/index.js');
 
 /**
- * Given an email address, return it's domain.
+ * Дан email-адрес, вернуть его домен.
  *
  * @param {String} email
  * @return {String}
  *
  * @example
- * For the input 'prettyandsimple@example.com', the output should be 'example.com'
- *
+ * Для входных данных 'prettyandsimple@example.com' вывод должен быть 'example.com'
  */
-function getEmailDomain(/* email */) {
-  throw new NotImplementedError('Not implemented');
-  // remove line with error and write your code here
+function getEmailDomain(email) {
+  // Проверка на валидность входных данных, если email не является строкой, выбросить ошибку
+  if (typeof email !== 'string') {
+    throw new Error('Invalid input');
+  }
+
+  // Используем метод lastIndexOf() для нахождения последнего вхождения символа "@" в строке
+  const atIndex = email.lastIndexOf('@');
+
+  // Если символ "@" не найден, выбросить ошибку
+  if (atIndex === -1) {
+    throw new Error('Invalid email address');
+  }
+
+  // Используем метод slice() для извлечения подстроки из строки, начиная с символа после "@" и возвращаем полученный домен
+  return email.slice(atIndex + 1);
 }
 
+// Экспорт функции getEmailDomain
 module.exports = {
   getEmailDomain
 };
